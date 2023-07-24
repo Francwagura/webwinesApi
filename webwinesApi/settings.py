@@ -23,7 +23,7 @@ import os
 SECRET_KEY = 'django-insecure-3wcbk&iutz3^c%*hl$!e2d)_j*66!3b7@5^gn9lwemlca3iod1'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ["*"]
 
@@ -39,11 +39,13 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'product',
     'rest_framework',
+    'corsheaders'
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -70,6 +72,11 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'webwinesApi.wsgi.application'
+
+CORS_ORIGIN_WHITELIST = [
+    'http://localhost:5173',
+    'http://localhost:3000',
+]
 
 
 # Database
