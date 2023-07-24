@@ -1,0 +1,9 @@
+env
+.idea
+db.sqlite3
+__pycache__
+media
+static_files
+sandbox.py
+local_settings.py
+.env

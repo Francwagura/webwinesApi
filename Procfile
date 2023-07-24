@@ -1,0 +1,1 @@
+web gunicorn webwinesApi.wsgi:application --log-file -
