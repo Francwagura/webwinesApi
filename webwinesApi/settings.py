@@ -26,9 +26,6 @@ SECRET_KEY = 'django-insecure-3wcbk&iutz3^c%*hl$!e2d)_j*66!3b7@5^gn9lwemlca3iod1
 DEBUG = bool(os.environ.get("DEBUG", "0"))
 
 ALLOWED_HOSTS = ["webwines-389de0eff6d3.herokuapp.com", "localhost"]
-HTTPS = True
-
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -78,6 +75,7 @@ WSGI_APPLICATION = 'webwinesApi.wsgi.application'
 CORS_ORIGIN_WHITELIST = [
     'http://localhost:5173',
     'http://localhost:3000',
+    'a37f-105-162-10-120.ngrok-free.app',
 ]
 
 CORS_ALLOW_CREDENTIALS = True
