@@ -1,4 +1,4 @@
-from product.models import Product
+from .models import Product
 from .serializers import ProductListSerializer
 
 class Basket():
@@ -21,9 +21,6 @@ class Basket():
 
         if product_id not in self.basket:
             self.basket[product_id] = {}
-        else:
-            self.basket[product_id]["message"] = "already in cart"
-
         
 
         self.save()

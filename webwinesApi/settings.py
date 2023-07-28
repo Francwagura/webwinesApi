@@ -79,8 +79,6 @@ CORS_ORIGIN_WHITELIST = [
     'http://localhost:3000',
 ]
 
-CORS_ALLOW_CREDENTIALS = True
-
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
