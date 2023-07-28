@@ -60,6 +60,8 @@ def basket_summary(request):
 def basket_update(request):
     data = {"key":"value"}
     request.session["basket-data"] = data
+    print("testing session" ,request.session.items())  # Check session data
+
     if request.data.get('action') == 'add':
         print("adding")
         print(request.data)
