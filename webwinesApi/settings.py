@@ -23,9 +23,11 @@ import os
 SECRET_KEY = 'django-insecure-3wcbk&iutz3^c%*hl$!e2d)_j*66!3b7@5^gn9lwemlca3iod1'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
+DEBUG = bool(os.environ.get("DEBUG", "0"))
 
 ALLOWED_HOSTS = ["*"]
+
 
 
 # Application definition
@@ -85,13 +87,6 @@ CORS_ALLOW_CREDENTIALS = True
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
-
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
@@ -144,3 +139,8 @@ STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+try:
+    from .local_settings import *
+
+except ImportError as ie:
+    from .live_settings import *
