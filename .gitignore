@@ -5,3 +5,4 @@ static_files
 sandbox.py
 local_settings.py
 .env
+db.sqlite3
