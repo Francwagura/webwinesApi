@@ -58,6 +58,8 @@ def basket_summary(request):
 
 @api_view(['POST'])
 def basket_update(request):
+    data = {"key":"value"}
+    request.session["basket-data"] = data
     if request.data.get('action') == 'add':
         print("adding")
         print(request.data)
