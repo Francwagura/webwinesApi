@@ -44,6 +44,7 @@ class Basket():
 
         for item in basket.values():
             yield item
+        
             
     # def __len__(self):
     #     return sum(item['productqty'] for item in self.basket.values())

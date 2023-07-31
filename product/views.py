@@ -51,21 +51,14 @@ class CategoryListView(ListCreateAPIView):
 @api_view(['GET'])
 def basket_summary(request): 
     basket = Basket(request)
-    print(basket.basket)
     return Response(basket)
 
 
 
 @api_view(['POST'])
 def basket_update(request):
-    data = {"key":"value"}
-    request.session["basket-data"] = data
-    print("testing session" ,request.session.items())  # Check session data
-
     if request.data.get('action') == 'add':
-        print("adding")
-        print(request.data)
-        basket = Basket(request) 
+        basket = Basket(request)
         product_id = int(request.data.get('productid'))
         product = get_object_or_404(Product,id=product_id)
         basket.add(product)
